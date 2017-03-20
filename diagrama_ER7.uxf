@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>0</x>
+      <y>594</y>
+      <w>171</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>PLATILLO
+
+# id
+* nombre
+halign=left
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>441</x>
+      <y>135</y>
+      <w>189</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>NIÑO
+
+# matricula
+* nombres
+* apellido paterno
+° apellido materno
+* fecha de nacimiento
+* fecha de ingreso a guarderia
+° fecha de baja de guarderia
+* colegiatura
+halign=left
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>9</x>
+      <y>135</y>
+      <w>216</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>MENU
+
+# numero
+* fecha de creacion
+* precio del menu
+* tipo (desayuno, comida, merienda)
+halign=left
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>1008</x>
+      <y>135</y>
+      <w>261</w>
+      <h>306</h>
+    </coordinates>
+    <panel_attributes>TUTOR
+
+# id
+* curp
+* clave credencial de lector (INE)
+* nombres
+* apellido paterno
+° apellido materno
+
+* calle y numero
+* delegacion (municipio)
+* colonia
+* codigo postal
+
+° rfc
+° email
+° nombre banco
+° no. de cuenta del banco
+
+halign=left
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>81</x>
+      <y>261</y>
+      <w>54</w>
+      <h>171</h>
+    </coordinates>
+    <panel_attributes>lt=&gt;-
+m2= tener
+m1= estar</panel_attributes>
+    <additional_attributes>10.0;170.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>378</x>
+      <y>63</y>
+      <w>171</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=-&lt;
+m2= ser consumida</panel_attributes>
+    <additional_attributes>170.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>720</x>
+      <y>108</y>
+      <w>189</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>RESPONSABLE
+
+* parentesco
+halign=left
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>621</x>
+      <y>144</y>
+      <w>117</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=-&lt;
+m1=tener
+
+
+group=1</panel_attributes>
+    <additional_attributes>10.0;20.0;110.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>900</x>
+      <y>144</y>
+      <w>126</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&gt;-
+m2=ser
+
+group=1</panel_attributes>
+    <additional_attributes>10.0;20.0;120.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>522</x>
+      <y>360</y>
+      <w>63</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>lt=-&lt;
+m1= afectar
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>459</x>
+      <y>594</y>
+      <w>153</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>INGREDIENTE
+
+# id 
+* nombre
+halign=left
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>738</y>
+      <w>180</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&gt;-
+m1= tener 
+</panel_attributes>
+    <additional_attributes>10.0;20.0;180.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>522</x>
+      <y>477</y>
+      <w>72</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=-&lt;
+m2= causada</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>9</x>
+      <y>414</y>
+      <w>162</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>MENU/PLATILLO</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>81</x>
+      <y>522</y>
+      <w>81</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=.
+m2=pertenece
+
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>243</x>
+      <y>720</y>
+      <w>126</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>RECETA</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>72</x>
+      <y>675</y>
+      <w>189</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=&gt;-
+m1= corresmonder
+m2= tener
+
+</panel_attributes>
+    <additional_attributes>190.0;90.0;10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>459</x>
+      <y>423</y>
+      <w>144</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>ALERGIA
+
+° medicamento
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>252</x>
+      <y>36</y>
+      <w>135</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>DIETA
+
+* fecha de consumo
+* hora de consumo
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>90</x>
+      <y>63</y>
+      <w>180</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=-&lt;
+m2= tener</panel_attributes>
+    <additional_attributes>10.0;10.0;180.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>1053</x>
+      <y>558</y>
+      <w>180</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>TELEFONO
+
+# no de telefono
+* tipo (casa, oficina, celular)
+halign=left
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>918</x>
+      <y>135</y>
+      <w>27</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=-
+group=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>693</x>
+      <y>135</y>
+      <w>27</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=-
+group=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>396</x>
+      <y>45</y>
+      <w>27</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>225</x>
+      <y>45</y>
+      <w>27</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>369</x>
+      <y>729</y>
+      <w>27</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>225</x>
+      <y>729</y>
+      <w>27</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>63</x>
+      <y>396</y>
+      <w>63</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>50.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>63</x>
+      <y>468</y>
+      <w>63</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>50.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>504</x>
+      <y>396</y>
+      <w>63</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>50.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>504</x>
+      <y>495</y>
+      <w>63</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>50.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1134</x>
+      <y>432</y>
+      <w>81</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=-&lt;
+m1=tener
+m2= pertenecer</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>522</x>
+      <y>540</y>
+      <w>63</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=.
+m1= causar</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>522</x>
+      <y>306</y>
+      <w>54</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>lt=.
+m1=tener</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>513</x>
+      <y>666</y>
+      <w>54</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=.
+m2= estar</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>81</x>
+      <y>459</y>
+      <w>54</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&gt;-
+m1= tener
+
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>90</x>
+      <y>63</y>
+      <w>54</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=.
+m2= estar</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>522</x>
+      <y>63</y>
+      <w>54</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=.
+m2= tener</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>612</x>
+      <y>0</y>
+      <w>414</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>* " Modelo Entidad Relacion de una Guardería " *
+valign=center
+halign=center
+customelement=
+drawArc(width-25,5,10,50,50,80,false) fg=red bg=red //Parameters (x, y, width, height, start, extent, open)
+drawCircle(width-20,40,3) fg=red bg=red //Parameters (x, y, radius)
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>621</x>
+      <y>270</y>
+      <w>405</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&gt;-
+m1=ser pagada su colegiatura por
+m2=pagar cuota por
+
+</panel_attributes>
+    <additional_attributes>10.0;20.0;430.0;20.0</additional_attributes>
+  </element>
+</diagram>

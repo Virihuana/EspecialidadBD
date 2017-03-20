@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>11</zoom_level>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>176</x>
+      <y>627</y>
+      <w>209</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>PLATILLO
+
+# id
+* nombre
+halign=left
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>781</x>
+      <y>231</y>
+      <w>231</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>NIÑO
+
+# matricula
+* nombres
+* apellido paterno
+° apellido materno
+* fecha de nacimiento
+* fecha de ingreso a guarderia
+° fecha de baja de guarderia
+* colegiatura
+halign=left
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>176</x>
+      <y>231</y>
+      <w>264</w>
+      <h>165</h>
+    </coordinates>
+    <panel_attributes>MENU
+
+# numero
+* fecha de creacion
+* precio del menu
+* tipo (desayuno, comida, merienda)
+halign=left
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>1210</x>
+      <y>231</y>
+      <w>319</w>
+      <h>429</h>
+    </coordinates>
+    <panel_attributes>TUTOR
+
+# id
+* curp
+* clave credencial de lector (INE)
+* nombres
+* apellido paterno
+° apellido materno
+* telefono casa
+° telefono celular
+° telefono oficina
+* parentesco
+° autorizado para recoger al niño
+
+* calle y numero
+* delegacion (municipio)
+* colonia
+* codigo postal
+
+° rfc
+° email
+° nombre banco
+° no. de cuenta del banco
+halign=left
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>264</x>
+      <y>385</y>
+      <w>66</w>
+      <h>154</h>
+    </coordinates>
+    <panel_attributes>lt=-&lt;
+m2= tener
+</panel_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>803</x>
+      <y>638</y>
+      <w>187</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>INGREDIENTE
+
+# id 
+* nombre
+halign=left
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>264</x>
+      <y>506</y>
+      <w>66</w>
+      <h>143</h>
+    </coordinates>
+    <panel_attributes>lt=.&lt;
+m2=estar
+
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>374</x>
+      <y>660</y>
+      <w>242</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>lt=-&lt;
+m2= tener
+
+</panel_attributes>
+    <additional_attributes>200.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>880</x>
+      <y>440</y>
+      <w>132</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>lt=&gt;.&lt;
+m2= ser alergico
+m1= causar alergias</panel_attributes>
+    <additional_attributes>10.0;180.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>583</x>
+      <y>671</y>
+      <w>242</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=.&lt;
+m2= estar</panel_attributes>
+    <additional_attributes>10.0;10.0;200.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>429</x>
+      <y>308</y>
+      <w>374</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&gt;.&lt;
+m1=consumir
+m2= ser consumido</panel_attributes>
+    <additional_attributes>320.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>594</x>
+      <y>88</y>
+      <w>506</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>* " Modelo Entidad Relacion de una Guarderia " *
+valign=center
+halign=center
+customelement=
+drawArc(width-25,5,10,50,50,80,false) fg=red bg=red //Parameters (x, y, width, height, start, extent, open)
+drawCircle(width-20,40,3) fg=red bg=red //Parameters (x, y, radius)
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1001</x>
+      <y>308</y>
+      <w>231</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>lt=&gt;-&lt;
+m1= tener
+m2= tener
+
+</panel_attributes>
+    <additional_attributes>10.0;20.0;190.0;20.0</additional_attributes>
+  </element>
+</diagram>
