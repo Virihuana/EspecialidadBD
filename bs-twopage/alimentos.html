@@ -1,0 +1,234 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Viri & Pablo </title>
+    <!-- BOOTSTRAP STYLES-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FONTAWESOME STYLES-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- CUSTOM STYLES-->
+    <link href="assets/css/custom.css" rel="stylesheet" />
+    <!-- GOOGLE FONTS-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <script src="js/jquery-1.11.3.min.js"></script>
+
+    <script src="js/ajax.js"></script>
+    <script>
+        getAllNinos();
+        cargarSelectNinos();
+        cargarSelectTutores();
+
+        tablaDeIngredientes();
+        tablaDePlatillos();
+        tablaDeMenus();
+
+        cargarSelectIngredintes();
+        cargarSelectPlatillos();
+    </script>
+
+</head>
+<body>
+    <div id="wrapper">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="adjust-nav">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><i class="fa fa-square-o "></i>&nbsp;GUARDERÍA VIRI'S & PABLO'S</a>
+                </div>            
+            </div>
+        </div>
+        <!-- /. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li class="text-center user-image-back">
+                        <img src="assets/img/guarderia.jpg" class="img-responsive" />                     
+                    </li>
+                    <li>
+                        <a href="index.html"><i class="fa fa-desktop "></i> REGISTRO </a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-qrcode "></i> ALIMENTOS </a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+
+<!-- /. ROW  -->
+        
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#VISTA_MENU" data-toggle="tab"> Menús </a>          </li>
+            <li class=""><a href="#VISTA_PLATILLO" data-toggle="tab"> Platillos </a>        </li>
+            <li class=""><a href="#VISTA_INGREDIENTE" data-toggle="tab"> Ingredientes </a>  </li>
+            <li class=""><a href="#VISTA_COMEDOR" data-toggle="tab"> COMEDOR </a>  </li>
+        </ul>
+<!---------------------------------------------------------------------------------------------------------------------->
+         <div class="tab-content">
+<!-------------->
+            <div class="tab-pane fade active in" id="VISTA_MENU">
+
+                <div class="row">
+                    <div class="col-md-12"> <h2> Catalogo de Menús </h2> </div>
+                </div>
+
+                <div class="row"><!-- ------ TABLA ------ -->
+                    <div class="col-md-6" id="div_tabla_menus"></div>
+                </div>
+
+                <div class="row" id="div_reg_menus" style='display:inline;'>
+                    <div class="col-md-4" id="div_menus">
+                        <h4>Agregar Nuevo Menú</h4>                        
+                        <label>*Tipo:</label>
+                            <select id="input_tipo">
+                                <option value="Desayuno">Desayuno</option>
+                                <option value="Comida">Comida</option>
+                                <option value="Cena">Cena</option>
+                            </select>
+                        <br>
+                        <label>*Precio:</label>
+                        <input class="form-control" id="input_precio"/>
+                        <button style="width: 50%;" onclick="agregarMenu();">AGREGAR</button>
+                        <br><br>
+                        <label> Agregar Platillo a Menú Seleccionado: </label><br>
+                        <input class="form-control" id="set_id_menu" disabled><br>
+                        <select id="select_platillo"></select><br><!-- ------ SELECT ------ -->
+                        <button style="width: 50%;" onclick="agre_plati();">Agregar Platillo</button><br>
+                    </div>                    
+                    <div class="row"><!-- ------ TABLA Menu Platillo ------ -->
+                        <div class="col-md-6" id="div_tab_plati"></div>
+                    </div>
+                </div>
+
+            </div>
+<!-------------->
+            <div class="tab-pane fade" id="VISTA_PLATILLO">
+
+                <div class="row">
+                    <div class="col-md-12"> <h2> Listado de Platillos </h2> </div>
+                </div>
+
+                <div class="row"><!-- ------ TABLA ------ -->
+                    <div class="col-md-6" id="div_tabla_platillos"></div>
+                </div>
+
+                <div class="row" id="div_reg_platillos" style='display:inline;'>                   
+                    <div class="col-md-4" id="div_platillos">
+                        <h4>Agregar Nuevo Platillo</h4>
+                        <label>Nombre*</label>
+                        <input class="form-control" id="input_Nombre"/>
+                        <button style="width: 50%;" onclick="agregarPlatillo();">Registrar Platillo</button>
+                        <br><br>
+                        <label> Agregar Ingrediente a Platillo Seleccionado: </label><br>
+                        <input class="form-control" id="set_id_paltillo" disabled><br>
+                        <select id="select_ingrediente"></select><br><!-- ------ SELECT ------ -->                   
+                        <button style="width: 50%;" onclick="agre_ingre();">Agregar Ingrediente</button><br>
+                    </div>                    
+                    <div class="row"><!-- ------ TABLA ------ -->
+                        <div class="col-md-6" id="div_tab_ingre"></div>
+                    </div>
+                </div>
+
+            </div>
+<!-------------->
+            <div class="tab-pane fade" id="VISTA_INGREDIENTE">
+
+                <div class="row">
+                    <div class="col-md-12"> <h2> Lista de Ingredientes </h2> </div>
+                </div>
+
+                <div class="row"><!-- ------ TABLA ------ -->                    
+                    <div class="col-md-6" id="div_tabla_ingredientes"></div>
+                </div>
+
+                <div class="row" id="div_reg_ingredientes" style='display:inline;'>                   
+                    <div class="col-md-4" id="div_ingrediente">
+                        <h4>Agregar Nuevo Ingrediente a la lista</h4>
+                        <label>Nombre*</label>
+                        <input class="form-control" id="inputNombre"/>
+                        <button style="width: 50%;" onclick="agregarIngrediente();">AGREGAR</button>
+                    </div>
+                </div>
+
+            </div>
+<!-------------->
+            <div class="tab-pane fade" id="VISTA_COMEDOR">
+                <div class="row">
+                    <div class="col-md-12"> <h2> Comedor </h2> </div>
+                </div>
+
+                <div class="row" id="div_comedor" style='display:inline;'>                   
+                    <div class="col-md-5">
+                        <label>Selecciona el niño para buscar los menus que puede consumir:</label>
+                        <br>
+                        <select id="ninosRespon"></select>
+                        <br><br><br>
+                        <label>Selecciona el tipo de menu:</label>
+                        <br>
+                        <select id="input_tipo2">
+                            <option value="Desayuno">Desayuno</option>
+                            <option value="Comida">Comida</option>
+                            <option value="Cena">Cena</option>
+                        </select>
+                        <br>
+                        <button style="width: 50%" onclick="tablaDeMenusComedor();">Buscar menús para el niño</button>
+                    </div>
+                </div>
+
+                <div class="row"><!-- ------ TABLA ------ -->
+                    <div class="col-md-6" id="div_tabla_comedor_menus"></div>
+                </div>
+                <hr />
+                <label>Historial de Consumo:</label>
+                <div class="row"><!-- ------ TABLA ------ -->
+                    <div class="col-md-6" id="div_tabla_historial_consumo"></div>
+                </div>
+
+            </div >
+
+<!-------------->
+         </div>
+<!---------------------------------------------------------------------------------------------------------------------->
+                <!-- /. ROW  -->                
+                <!-- /. ROW  -->
+                <hr />
+                <hr />
+                  <div class="row">
+                    <div class="col-md-12">
+                        <h5>Information</h5>
+                            This is a type of bare admin that means you can customize your own admin using this admin structured  template . For More Examples of bootstrap elements or components please visit official bootstrap website <a href="http://getbootstrap.com" target="_blank">getbootstrap.com</a>
+                        . And if you want full template please download <a href="http://www.binarytheme.com/bootstrap-free-admin-dashboard-template/" target="_blank" >FREE BCORE ADMIN </a>&nbsp;,&nbsp;  <a href="http://www.binarytheme.com/free-bootstrap-admin-template-siminta/" target="_blank" >FREE SIMINTA ADMIN</a> and <a href="http://binarycart.com/" target="_blank" >FREE BINARY ADMIN</a>.
+
+                    </div>
+                </div>
+                <!-- /. ROW  -->
+
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+    <!-- CUSTOM SCRIPTS -->
+    <script src="assets/js/custom.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,338 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Viri & Pablo </title>
+    <!-- BOOTSTRAP STYLES-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FONTAWESOME STYLES-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- CUSTOM STYLES-->
+    <link href="assets/css/custom.css" rel="stylesheet" />
+    <!-- GOOGLE FONTS-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/ajax.js"></script>
+
+    <script>
+        getAllNinos();
+        cargarSelectNinos();
+        cargarSelectTutores();
+        cargarSelectIngredientes();
+
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="adjust-nav">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><i class="fa fa-square-o "></i>&nbsp;GUARDERÍA VIRI'S & PABLO'S</a>
+                </div>
+            </div>
+        </div>
+        <!-- /. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li class="text-center user-image-back">
+                        <img src="assets/img/guarderia.jpg" class="img-responsive" />
+                     
+                    </li>
+                    <li>
+                        <a href="index.html"><i class="fa fa-desktop "></i>REGISTRO</a>
+                    </li>            
+                    <li>
+                        <a href="alimentos.html"><i class="fa fa-qrcode "></i>Alimentos</a>
+                    </li>                    
+                </ul>
+            </div>
+        </nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+
+        <!-- /. ROW  -->
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#AGREGAR-NINOS-TUTORES" data-toggle="tab">AGREGAR NIÑOS/TUTORES</a>
+            </li>
+            <li class=""><a href="#EDITAR-NIÑOS-TUTORES" data-toggle="tab">EDITAR NIÑOS/TUTORES</a>
+            </li>
+            <li class=""><a href="#ALERGIAS" data-toggle="tab">ALERGIAS</a>
+            </li>
+        </ul>
+         <div class="tab-content">
+            <div class="tab-pane fade active in" id="AGREGAR-NINOS-TUTORES">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>INSERTAR NIÑOS CON TUTOR</h2>
+                    </div>
+                </div>
+                <div class="row" id="DIVREGISTRONINO" style='display:inline;'>
+                    <div class="col-md-4">
+                      <h4>Agregar tutor</h4><br><hr/>
+                        <i><label>Curp*</label>
+                        <input class="form-control" id="inputCurp"/>
+                        <label>INE*</label>
+                        <input class="form-control" id="inputINE"/>
+                        <label>RFC</label>
+                        <input class="form-control" id="inputRFC"/>
+                        <label>Nombre*</label>
+                        <input class="form-control" id="inputNombre"/>
+                        <label>Apellido Paterno*</label>
+                        <input class="form-control" id="inputApaterno"/>
+                        <label>Apellido Materno</label>
+                        <input class="form-control" id="inputAmaterno"/>
+                        <label>Email</label>
+                        <input class="form-control" id="inputEmail"/><hr/>
+                        <h5>Agregar su direccion</h5>
+                        <label>Calle*</label>
+                        <input class="form-control" id="inputCalle"/>
+                        <label>Delegacion*</label>
+                        <input class="form-control" id="inputDelega"/>
+                        <label>Colonia*</label>
+                        <input class="form-control" id="inputColonia"/>
+                        <label>CP*</label>
+                        <input class="form-control" id="inputCP"/><hr/>
+                        <h5>Agregar datos pago</h5>
+                        <label>Banco</label>
+                        <input class="form-control" id="inputBanco"/>
+                        <label>No. de Cuenta</label>
+                        <input class="form-control" id="inputNC"/>    
+                        <br><button style="width: 50%; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" onclick="insertTutor();">Insertar tutor</button><br><br><br><br></i>
+                        
+
+                        <div id="PHONES" style='display:inline;'>
+                            <h5>Agregar teléfonos (opcional)</h5>
+                            <label>Teléfono</label>
+                            <input class="form-control" id="inputTel"/><br>
+                            <select id="selctTelefonos">
+                                <option>Casa</option>
+                                <option>Celular</option>
+                                <option>Oficina</option>                            
+                            </select><br><br>
+                            <button style="width: 50%; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" onclick="insertTelefono();">Insertar telefono</button><br><br> <hr/> 
+                        </div>
+
+
+                    </div>
+                    <div class="col-md-2"></div>
+
+                   <div class="col-md-4" id="divINSERTNINO">
+                        <div class="form-group">
+                            <h4>Agregar un nuevo niño</h4><br><hr/>                            
+                            <label>Nombre(s)*</label>
+                            <input class="form-control" id="inputNombreNino" />
+                            <label>Apellido Paterno*</label>
+                            <input class="form-control" id="inputApaternoNino"/>
+                            <label>Apellido Materno</label>
+                            <input class="form-control" id="inputAmaternoNino" />
+                            <label>Fecha de Nacimiento*</label>
+                            <input class="form-control" id="inputfnNino" /><hr/>
+                            <h5>Agregar datos de estadía</h5>                           
+                            <label>Fecha ingreso*</label>
+                            <input class="form-control" id="inputfiNino" />                            
+                            <label>Fecha egreso</label>
+                            <input class="form-control" id="inputfeNino" /><hr/>
+                            <h5>Monto de pago</h5>
+                            <label>Colegiatura*</label>
+                            <input class="form-control" id="inputCole" /><br><hr/>                                                           
+                            <label>Tutor* </label><br>
+                            <select id="tutorSelect"></select>
+                            <br><br><button type="button" style="width: 50%; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" onclick="insertNino();">Insertar Niño</button><br><br>                                                                            
+                        </div>
+
+                    </div>
+ 
+                        <div class="col-md-4">
+                                
+                        </div>
+                </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h2>VER NIÑOS</h2>
+                            </div>
+                        </div>                    
+                        <div class="row">                
+                             <div class="col-md-6" id="divTablaNinos"></div>
+                        </div>
+                                 
+                        <hr />
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h2>AGREGAR RESPONSABLES DEL NIÑO</h2>
+                            </div>
+                        </div>                         
+                        <div class="row" id="divResponsables" style='display:inline;'>                              
+                            <div class="col-md-5">
+                                <label>NIÑOS </label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                <select id="ninosResponAgregar"></select><br><br>
+                                <label>TUTORES </label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                <select id="tutoresResponAgregar"></select><br><br>
+                                <label>Parentesco*</label>&nbsp&nbsp&nbsp
+                                <select id="responsableSelect">
+                                    <option value="Padre">Padre</option>
+                                    <option value="Madre">Madre</option>
+                                    <option value="Hermano(a)">Hermano(a)</option>
+                                    <option value="Familiar">Familiar</option>
+                                    <option value="Conocido">Conocido</option>
+                                </select><br>
+                                <br><button type="button" style="width: 50%; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" onclick="insertResponsables();">Agregar Responsables</button><br><br>
+                                <hr/>
+                                <label>Selecciona el niño para buscar sus responsables</label>  <br>
+                                <select id="ninosRespon"></select>
+                                <br><br>                                
+                                <button style="width: 50%; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" onclick="buscarResponsables();">Ver responsables</button>
+                            </div>
+                            <div class="col-md-5">                                
+                                <br>
+                                <div id="divTablaResponsables"></div>
+                            </div>
+                        </div>
+            </div>
+            <div class="tab-pane fade" id="EDITAR-NIÑOS-TUTORES"><!--HOLA></HOLA-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>EDITAR NIÑOS O TUTOR</h2>
+                    </div>
+                </div>
+                <div class="row" id="DIVEDITARNINO" style='display:inline;'>
+                    <div class="col-md-4">
+                      <h4>Editar tutor</h4><hr/>
+                        <h6>Selecciona el tutor que quieres editar</h6>
+                        <select id="tutorSelectEditar"></select><br><br>
+                        <button style=" box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" onclick="buscarTutor();">
+                        Buscar tutor</button><br><br><br>
+                        <label>Curp*</label>
+                        <input class="form-control" id="inputECurp"/>
+                        <label>INE*</label>
+                        <input class="form-control" id="inputEINE"/>
+                        <label>RFC</label>
+                        <input class="form-control" id="inputERFC"/>
+                        <label>Nombre*</label>
+                        <input class="form-control" id="inputENombre"/>
+                        <label>Apellido Paterno*</label>
+                        <input class="form-control" id="inputEApaterno"/>
+                        <label>Apellido Materno</label>
+                        <input class="form-control" id="inputEAmaterno"/>
+                        <label>Email</label>
+                        <input class="form-control" id="inputEEmail"/><hr/>
+                        <h5>Agregar su direccion</h5>
+                        <label>Calle*</label>
+                        <input class="form-control" id="inputECalle"/>
+                        <label>Delegacion*</label>
+                        <input class="form-control" id="inputEDelega"/>
+                        <label>Colonia*</label>
+                        <input class="form-control" id="inputEColonia"/>
+                        <label>CP*</label>
+                        <input class="form-control" id="inputECP"/><hr/>
+                        <div id="divTelefonos"></div>
+                        <h5>Agregar datos pago</h5>
+                        <label>Banco</label>
+                        <input class="form-control" id="inputEBanco"/>
+                        <label>No. de Cuenta</label>
+                        <input class="form-control" id="inputENC"/>   
+                        <br><button style="width: 50%; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" onclick="editarTutor();">
+                        Editar tutor</button><br><br>                                        
+                    </div>
+
+                   <div class="col-md-4" id="divINSERTNINO">
+                        <div class="form-group">
+                            <h4>Editar niño</h4><hr/>  
+                            <h6>Selecciona el niño que quieres editar</h6>
+                            <select id="ninoSelectEditar"></select><br><br>
+                            <button style=" box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" onclick="buscarNino();">
+                        Buscar niño</button><br><br><br>                         
+                            <label>Nombre(s)*</label>
+                            <input class="form-control" id="inputENombreNino" />
+                            <label>Apellido Paterno*</label>
+                            <input class="form-control" id="inputEApaternoNino"/>
+                            <label>Apellido Materno</label>
+                            <input class="form-control" id="inputEAmaternoNino" />
+                            <label>Fecha de Nacimiento*</label>
+                            <input class="form-control" id="inputEfnNino" /><hr/>
+                            <h5>Agregar datos de estadía</h5>                           
+                            <label>Fecha ingreso*</label>
+                            <input class="form-control" id="inputEfiNino" />                            
+                            <label>Fecha egreso</label>
+                            <input class="form-control" id="inputEfeNino" /><hr/>
+                            <h5>Monto de pago</h5>
+                            <label>Colegiatura*</label>
+                            <input class="form-control" id="inputECole" /><br><hr/>                                                           
+                            <label>Tutor* </label><br>
+                            <select id="tutorESelect"></select>
+                            <br><br><button type="button" style="width: 50%; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" onclick="editarNino();">Editar Niño</button><br><br>                                                                           
+                        </div>
+                    </div>
+ 
+                        <div class="col-md-4">
+                                
+                        </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="ALERGIAS">   
+                <div class="row">
+                        <div class="col-md-12">
+                            <h2>AGREGAR LAS ALERGIAS</h2>
+                        </div>
+                    <div class="col-md-5"> 
+                    <h4>Selecciona el niño e ir agregando los ingredientes a los cuales es alérgico</h4><hr/>
+                    <label>Selecciona el niño:</label>  
+                                  
+                        <select id="ninosAlergias"></select><br><br>
+                        <label>Es alérgico a:</label><br>
+                        <select id="ingredientesAlergias"></select><br><br>
+                        <label>Medicamento</label>
+                        <input class="form-control" id="inputMedica"/><br><hr/>
+                        <br><button type="button" style="width: 50%; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" onclick="insertAlergias();">Insertar alergia</button><br><br>  
+                        <br><button type="button" style="width: 50%; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" onclick="getAllAlergias();">Busca Alergias</button><br><br>  
+                    </div>                
+                </div>
+                <div class="row">                
+                     <div class="col-md-6" id="divTablaAlergias"></div>
+                </div>
+            </div>
+
+         </div>
+        
+                <hr />
+
+
+                <!-- /. ROW  -->
+                <hr />
+                  <div class="row">
+                    <div class="col-md-12">
+                        <h5>Information</h5>
+                            Esta aplicación fue hecha con mucho esfuerzo, si en algo falla, por favor hacérnolo saber, muchas gracias público presente :) <a href="http://getbootstrap.com" target="_blank">getbootstrap.com</a>
+                        . And if you want full template please download <a href="http://www.binarytheme.com/bootstrap-free-admin-dashboard-template/" target="_blank" >FREE BCORE ADMIN </a>&nbsp;,&nbsp;  <a href="http://www.binarytheme.com/free-bootstrap-admin-template-siminta/" target="_blank" >FREE SIMINTA ADMIN</a> and <a href="http://binarycart.com/" target="_blank" >FREE BINARY ADMIN</a>.
+
+                    </div>
+                </div>
+                <!-- /. ROW  -->
+
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+    <!-- CUSTOM SCRIPTS -->
+    <script src="assets/js/custom.js"></script>
+
+
+</body>
+</html>
